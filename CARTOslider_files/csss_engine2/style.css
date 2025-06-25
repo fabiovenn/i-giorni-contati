@@ -1,0 +1,413 @@
+
+/* ------------- General ------------- */
+@import url(https://fonts.googleapis.com/css?family=PT+Sans&subset=latin,latin-ext);
+@font-face {
+	font-family: "cs-ctrl-basic";
+	src: url("cs-ctrl-basic.eot");
+	src: url("cs-ctrl-basic.eot#iefix") format("embedded-opentype"),
+			url("cs-ctrl-basic.woff") format("woff"),
+			url("cs-ctrl-basic.ttf") format("truetype"),
+			url("cs-ctrl-basic.svg#basic") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.csslider2 {
+  display: inline-block;
+  position: relative;
+  max-width: 1024px;
+  
+  
+
+  width: 100%;
+}
+.csslider2,
+.csslider2 *,
+.csslider2 *:after,
+.csslider2 *:before {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.csslider2 > .cs_anchor {
+  display: none;
+}
+.csslider2 > ul {
+  position: relative;
+  z-index: 1;
+  font-size: 0;
+  line-height: 0;
+  margin: 0 auto;
+  padding: 0;
+  
+  overflow: hidden;
+  white-space: nowrap;
+}
+.csslider2 > ul > .cs_skeleton {
+  width: 100%;
+  visibility: hidden;
+  font-size: 0px;
+  line-height: 0;
+}
+
+.csslider2 > ul > .slide.img img {
+  width: 100%;
+}
+
+
+
+.csslider2 > ul > .slide.img a {
+  font-size: 0pt;
+  color: transparent;
+}
+.csslider2 > ul > .slide {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-size: 15px;
+  font-size: initial;
+  line-height: normal;
+  white-space: normal;
+  vertical-align: top;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+
+  -webkit-transform: translate3d(0,0,0);
+  transform: translate3d(0,0,0);
+}
+.csslider2 .cs_engine{
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+  font-size: 0pt;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+
+.csslider2 > ul > li.img,
+.csslider2 > .cs_arrowprev,
+.csslider2 > .cs_arrownext,
+.csslider2 > .cs_bullets,
+.csslider2 > .cs_play_pause {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+/* ------------- /General Styles ------------- */
+
+/* ------------- General Arrows ------------- */
+.csslider2 > .cs_arrowprev,
+.csslider2 > .cs_arrownext {
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.csslider2 > .cs_arrowprev > label,
+.csslider2 > .cs_arrownext > label {
+  position: absolute;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0;
+  z-index: -1;
+}
+.csslider2 > .cs_arrowprev {
+  left: 0;
+}
+.csslider2 > .cs_arrownext {
+  right: 0;
+}
+
+.csslider2 > .slide:checked ~ .cs_arrowprev > label,
+.csslider2 > .slide:checked ~ .cs_arrownext > label {
+  opacity: 0;
+  z-index: -1;
+}
+
+
+
+.csslider2 > #cs_slide2_0:checked ~ .cs_arrowprev > label.num2,
+.csslider2 > #cs_pause2_0:checked ~ .cs_arrowprev > label.num2,
+.csslider2 > #cs_slide2_0:checked ~ .cs_arrownext > label.num1,
+.csslider2 > #cs_pause2_0:checked ~ .cs_arrownext > label.num1, 
+.csslider2 > #cs_slide2_1:checked ~ .cs_arrowprev > label.num0,
+.csslider2 > #cs_pause2_1:checked ~ .cs_arrowprev > label.num0,
+.csslider2 > #cs_slide2_1:checked ~ .cs_arrownext > label.num2,
+.csslider2 > #cs_pause2_1:checked ~ .cs_arrownext > label.num2, 
+.csslider2 > #cs_slide2_2:checked ~ .cs_arrowprev > label.num1,
+.csslider2 > #cs_pause2_2:checked ~ .cs_arrowprev > label.num1,
+.csslider2 > #cs_slide2_2:checked ~ .cs_arrownext > label.num0,
+.csslider2 > #cs_pause2_2:checked ~ .cs_arrownext > label.num0 {
+  opacity: 1;
+  z-index: 5;
+}
+
+
+/* ------------- /General Arrows ------------- */
+
+/* ------------- General Gestures ------------- */
+.csslider2.cs_handle {
+  cursor: -webkit-grab;
+  cursor: -moz-grab;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAABwSURBVEjH7ZJBEsAgCAMT/v/n9NCOSqe2oD2yNx1JggB4BCEFWyFASP2KMQE7ywWhe/tTRGCGogLk02tFctiW/SUgaMyQG4PdPzDn31rQbMb8FiAXgvsEJNax1yVlVGAjA93apP3HFhZTGIqiKH7iADB6HxPlHdNVAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDE0LTA3LTA3VDEzOjQ5OjEwKzAyOjAwm7WiFAAAACV0RVh0ZGF0ZTptb2RpZnkAMjAxNC0wNy0wN1QxMzo0OToxMCswMjowMOroGqgAAAAASUVORK5CYII="), move;
+}
+.csslider2.cs_handle.cs_grab {
+  cursor: -webkit-grabbing;
+  cursor: -moz-grabbing;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAABaSURBVEjH7ZMxCkAhDEOT8u9/5TpJ+xWkFse8IYutJgEB8RCHL1qCc90BEFnT6QH7mwgFHBUf8wJyS1TDLuc3vmighx37LZdIth3E5hKj9n6O0HRh+oJCiFcMxRUUDxR1CTMAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTQtMDctMDdUMTM6NDk6MzgrMDI6MDDqf+sOAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE0LTA3LTA3VDEzOjQ5OjM4KzAyOjAwmyJTsgAAAABJRU5ErkJggg=="), move;
+}
+
+
+.csslider2 .cs_gestures {
+  visibility: hidden;
+  position: absolute;
+  font-size: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 1;
+  opacity: 0;
+
+  -webkit-transition: visibility .3s linear, opacity .3s linear;
+  transition: visibility .3s linear, opacity .3s linear;
+}
+.csslider2 .cs_gestures.cs_show {
+  visibility: visible;
+  opacity: 1;
+}
+.csslider2 .cs_gestures.cs_show img {
+  width: 33.333333333333336%;
+}
+.csslider2 .cs_gestures.cs_show .cs_first_img {
+  position: absolute;
+  left: -33.333333333333336%;
+  top: 0;
+}
+.csslider2 .cs_gestures.cs_show .cs_last_img {
+  position: absolute;
+  left: 100%;
+  top: 0;
+}
+
+.csslider2 .cs_gestures > div {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300%;
+}
+/* ------------- /General Gestures ------------- */
+
+/* ------------- Effect ------------- */
+
+.csslider2 > #cs_slide2_0:checked ~ ul > .slide.num0,
+.csslider2 > #cs_pause2_0:checked ~ ul > .slide.num0,
+.csslider2 > #cs_slide2_1:checked ~ ul > .slide.num1,
+.csslider2 > #cs_pause2_1:checked ~ ul > .slide.num1,
+.csslider2 > #cs_slide2_2:checked ~ ul > .slide.num2,
+.csslider2 > #cs_pause2_2:checked ~ ul > .slide.num2 {
+  opacity: 1;
+  z-index: 2;
+}
+
+.csslider2 > ul > .slide {
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  z-index: 1;
+  
+  -webkit-transition: opacity 2000ms ease;
+  transition: opacity 2000ms ease;
+
+  
+  -webkit-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+
+/* ------------- /Effect ------------- */
+
+/* ------------- Template Show on hover ------------- */
+.csslider2 > .cs_play_pause {
+  -webkit-transition: .4s all 0s ease;
+  transition: .4s all 0s ease;
+}
+.csslider2 > .cs_arrowprev {
+  -webkit-transition: .4s all .15s ease;
+  transition: .4s all .15s ease;
+}
+.csslider2 > .cs_arrownext {
+  -webkit-transition: .4s all .3s ease;
+  transition: .4s all .3s ease;
+}
+.csslider2 > .cs_arrowprev,
+.csslider2 > .cs_arrownext,
+.csslider2 > .cs_play_pause {
+  opacity: 0;
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+}
+
+.csslider2:hover > .cs_arrowprev,
+.csslider2:hover > .cs_arrownext,
+.csslider2:hover > .cs_play_pause {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+/* ------------- /Template Show on hover ------------- */
+
+/* ------------- Template Arrows ------------- */
+.csslider2 > .cs_arrowprev > label,
+.csslider2 > .cs_arrownext > label {
+  padding: 17px;
+  height: 23px;
+  width: 23px;
+  margin-top: -28px;
+  margin-left: -28px;
+
+  background-color: #9b1860;
+
+  border-radius: 50%;
+}
+.csslider2 > .cs_arrowprev > label,
+.csslider2 > .cs_arrownext > label,
+.csslider2 > .cs_arrowprev > label span:after,
+.csslider2 > .cs_arrownext > label span:after {
+  -webkit-transition: background-color 0.4s, color 0.4s;
+  transition: background-color 0.4s, color 0.4s;
+}
+.csslider2 > .cs_arrowprev {
+  margin-left: 2px;
+  left: 45px;
+}
+.csslider2 > .cs_arrownext {
+  margin-right: 2px;
+  right: 45px;
+}
+.csslider2 > .cs_arrowprev > label span,
+.csslider2 > .cs_arrownext > label span {
+  display: block;
+  color: #3A4A5A;
+}
+.csslider2 > .cs_arrowprev > label span:after,
+.csslider2 > .cs_arrownext > label span:after {
+  display: block;
+  font: 21px "cs-ctrl-basic";
+  line-height: 23px;
+  text-align: center;
+}
+/* IE10+ hack */
+_:-ms-input-placeholder, :root .csslider2 > .cs_arrowprev > label span:after {
+  line-height: 29px;
+}
+_:-ms-input-placeholder, :root .csslider2 > .cs_arrownext > label span:after {
+  line-height: 29px;
+}
+
+.csslider2 > .cs_arrowprev > label span:after {
+  content: '\e800';
+}
+.csslider2 > .cs_arrownext > label span:after {
+  content: '\e801';
+}
+
+.csslider2 > .cs_arrowprev:hover > label,
+.csslider2 > .cs_arrownext:hover > label {
+  background-color: #cd8cb0;
+}
+
+.csslider2 > .cs_arrownext:hover > label span {
+  color: #000;
+  -webkit-animation: nextArrow .7s infinite ease-in-out;
+  animation: nextArrow .7s infinite ease-in-out;
+}
+.csslider2 > .cs_arrowprev:hover > label span {
+  color: #000;
+  -webkit-animation: prevArrow .7s infinite ease-in-out;
+  animation: prevArrow .7s infinite ease-in-out;
+}
+
+
+@keyframes nextArrow {
+  0%, 100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  75% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+}
+@-webkit-keyframes nextArrow {
+  0%, 100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+  75% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+}
+
+@-webkit-keyframes prevArrow {
+  0%, 100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  75% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+}
+@keyframes prevArrow {
+  0%, 100% {
+    -webkit-transform: translateX(0px);
+    transform: translateX(0px);
+  }
+  25% {
+    -webkit-transform: translateX(-2px);
+    transform: translateX(-2px);
+  }
+  75% {
+    -webkit-transform: translateX(2px);
+    transform: translateX(2px);
+  }
+}
+/* ------------- /Template Arrows ------------- */
+/* hide description & bullets on mobile devices */
+@media
+only screen and (max-width: 480px),
+only screen and (-webkit-max-device-pixel-ratio: 2)      and (max-width: 480px),
+only screen and (   max--moz-device-pixel-ratio: 2)      and (max-width: 480px),
+only screen and (     -o-max-device-pixel-ratio: 2/1)    and (max-width: 480px),
+only screen and (        max-device-pixel-ratio: 2)      and (max-width: 480px),
+only screen and (                max-resolution: 192dpi) and (max-width: 480px),
+only screen and (                max-resolution: 2dppx)  and (max-width: 480px) { 
+  .csslider2 > .cs_description,
+  .csslider2 > .cs_bullets {
+    display: none;
+  }
+}
